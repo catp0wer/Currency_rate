@@ -8,12 +8,15 @@ import java.net.URISyntaxException;
 public class Main {
 
 
-        public static void main(String[] args) throws IOException, URISyntaxException {
-            URI bnmURL = new URIBuilder(Property.readProperties().getProperty("bnmURL"))
-                    .addParameter("date", "13.02.2018")
-                    .build();
+    public static void main(String[] args) throws IOException, URISyntaxException {
+        URI bnmURL = new URIBuilder(Property.readProperties().getProperty("bnmURL"))
+                .addParameter("date", "13.02.2018")
+                .build();
 
-            System.out.println(bnmURL);
+        System.out.println(bnmURL);
+        HttpRequest r1 = new HttpRequest();
+        String result = r1.Request(bnmURL);
+        System.out.println(result);
 
     }
 }
